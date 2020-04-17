@@ -41,6 +41,15 @@ export default function App() {
     setRepository(newRepositories);
   }
 
+  function formatLikes(like) {
+    if (like > 1) {
+      return like + ' curtidas';
+    }
+    else {
+      return like + ' curtida';
+    }
+  }
+
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
@@ -67,16 +76,16 @@ export default function App() {
                 <View style={styles.likesContainer}>
                   <Text
                     style={styles.likeText}
-                    testID={`repository-likes-1-${repository.id}`}
+                    testID={`repository-likes-${repository.id}`}
                   >
-                    {repository.like} curtidas
+                    {formatLikes(repository.like)}
                   </Text>
                 </View>
 
                 <TouchableOpacity
                   style={styles.button}
                   onPress={() => handleLikeRepository(repository.id)}
-                  testID={`like-button-1`}
+                  testID={`like-button-${repository.id}`}
                 >
                   <Text style={styles.buttonText}>Curtir</Text>
                 </TouchableOpacity>
