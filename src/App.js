@@ -36,7 +36,7 @@ export default function App() {
       }
     });
 
-    //console.log(newRepositories);
+    console.log(newRepositories);
 
     setRepository(newRepositories);
   }
@@ -78,7 +78,7 @@ export default function App() {
                     style={styles.likeText}
                     testID={`repository-likes-${repository.id}`}
                   >
-                    {formatLikes(repository.like)}
+                    {formatLikes(repository.likes)}
                   </Text>
                 </View>
 
